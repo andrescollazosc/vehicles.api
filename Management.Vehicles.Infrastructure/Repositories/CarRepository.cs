@@ -1,9 +1,6 @@
 ﻿using Management.Vehicles.Core.Contracts.Repositories;
 using Management.Vehicles.Core.Entities;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
-using System.Data.Common;
 
 namespace Management.Vehicles.Infrastructure.Repositories;
 
