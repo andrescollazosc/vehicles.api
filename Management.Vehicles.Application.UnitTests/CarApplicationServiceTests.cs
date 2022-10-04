@@ -1,8 +1,6 @@
 ﻿using Management.Vehicles.Application.DTO;
 using Management.Vehicles.Application.Mapping;
 using Management.Vehicles.Core.Contracts;
-using Management.Vehicles.Core.Entities;
-using Management.Vehicles.Core.Enums;
 using Moq;
 using Xunit;
 
@@ -29,6 +27,35 @@ public class CarApplicationServiceTests
             CubicCentimeters = "1980",
             Velocity = 2500
         });
+
+        // Assert
+    }
+
+    [Fact]
+    public void GetAllActiveCar_IsCalled()
+    {
+        // Arrange
+        var carCoreService = new Mock<ICarCoreService>();
+        var mapper = new Mock<IMapper>();
+        var carApplicationService = new CarApplicationService(carCoreService.Object, mapper.Object);
+
+        // Act
+        var result = carApplicationService.GetAllActiveCar();
+
+        // Assert
+    }
+
+    [Fact]
+    public void GetById_IsCalled()
+    {
+        // Arrange
+        var carCoreService = new Mock<ICarCoreService>();
+        var mapper = new Mock<IMapper>();
+        var carApplicationService = new CarApplicationService(carCoreService.Object, mapper.Object);
+        Guid vehicleUid = Guid.NewGuid();
+
+        // Act
+        var result = carApplicationService.GetById(vehicleUid);
 
         // Assert
     }
