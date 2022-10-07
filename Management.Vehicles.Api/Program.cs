@@ -1,6 +1,4 @@
 using Management.Vehicles.Api.IoC;
-using Management.Vehicles.Infrastructure;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
-builder.Services.ConfigDB(builder.Configuration);
+builder.Services.ConfigDb(builder.Configuration);
 builder.Services.DependencyInjection();
 
 builder.Services.AddEndpointsApiExplorer();

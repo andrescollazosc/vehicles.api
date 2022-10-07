@@ -13,7 +13,7 @@ namespace Management.Vehicles.Api.IoC;
 
 internal static class DependencyBuilder
 {
-    internal static void ConfigDB(this IServiceCollection services, IConfiguration configuration)
+    internal static void ConfigDb(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<VehicleDBContext>(m =>
                 m.UseSqlServer(configuration.GetConnectionString("vehicleDB")),
