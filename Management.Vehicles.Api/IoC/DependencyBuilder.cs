@@ -16,7 +16,7 @@ internal static class DependencyBuilder
     internal static void ConfigDb(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<VehicleDBContext>(m =>
-                m.UseSqlServer(configuration.GetConnectionString("vehicleDB")),
+                m.UseSqlServer(configuration.GetConnectionString("vehicleDB")), // TODO: separate name from connection string.
             ServiceLifetime.Singleton);
     }
 
