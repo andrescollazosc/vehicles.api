@@ -9,9 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
-builder.Services.AddDbContext<VehicleDBContext>(m =>
-    m.UseSqlServer(builder.Configuration.GetConnectionString("vehicleDB")),
-    ServiceLifetime.Singleton);
+builder.Services.ConfigDB(builder.Configuration);
 builder.Services.DependencyInjection();
 
 builder.Services.AddEndpointsApiExplorer();
